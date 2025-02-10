@@ -1,0 +1,402 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body and Background Video */
+  body {
+    font-family: "Orbitron", serif;
+    color: white;
+    overflow: hidden;
+  }
+  
+  #bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.7); /* Darken the video for better contrast */
+  }
+  
+  /* Navbar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.01); /* 50% transparent */
+    padding: 15px 20px;
+    z-index: 1000;
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar ul li {
+    margin: 0 20px;
+  }
+  
+  .navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-family: "Orbitron", serif;
+  }
+  
+  .navbar ul li a:hover {
+    color: #00bcd4; /* Light blue for hover effect */
+  }
+  
+  /* Welcome Message */
+  .welcome-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0); /* 100% transparent */
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Slightly visible border */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  }
+  
+  .welcome-message h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.95); /* Slightly transparent text */
+  }
+  
+  .welcome-message p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9); /* Slightly transparent text */
+  }
+  
+  /* Footer */
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.01); /* 50% transparent */
+    text-align: center;
+    padding: 15px;
+    z-index: 1000;
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+  }
+  
+  .footer p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8); /* Slightly transparent text */
+  }
+  /* Play/Pause Button */
+/* Play Button to Enable Sound */
+#enable-sound {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001;
+    backdrop-filter: blur(10px);
+    font-family: "Orbitron", serif;
+    font-size: 14px;
+  }
+  
+  #enable-sound:hover {
+    background: rgba(0, 0, 0, 0.9);
+  }
+/* Terminal Load Animation Keyframes */
+@keyframes terminalLoad {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -45%) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Terminal Styling */
+.terminal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  background: rgba(0, 0, 0, 0.01); /* 99% transparent */
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Slightly visible border */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  font-family: "Chakra Petch", monospace;
+  color: #00ff00;
+  overflow: hidden;
+  z-index: 1000;
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  
+  /* Apply the load animation */
+  animation: terminalLoad 0.8s ease-out forwards;
+}
+
+.terminal-header {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.terminal-title {
+  font-size: 14px;
+}
+
+.terminal-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ff5f56;
+}
+
+.control.minimize {
+  background: #ffbd2e;
+}
+
+.control.maximize {
+  background: #27c93f;
+}
+
+.terminal-body {
+  padding: 10px;
+  height: calc(100% - 40px);
+  overflow-y: auto;
+}
+
+.output {
+  margin-bottom: 10px;
+}
+
+.input-line {
+  display: flex;
+  align-items: center;
+}
+
+.prompt {
+  margin-right: 5px;
+}
+
+#terminal-input {
+  background: transparent;
+  border: none;
+  color: #00ff00;
+  font-family: "Chakra Petch", monospace;
+  font-size: 16px;
+  outline: none;
+  flex-grow: 1;
+}
+
+.command {
+  color: #00bcd4;
+  font-weight: bold;
+}
+
+
+/* Gallery Styling */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  margin-top: 80px; /* Adjust for navbar */
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.image-description {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  transition: bottom 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.gallery-item:hover .image-description {
+  bottom: 0;
+}
+
+.image-description h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #00bcd4;
+}
+
+.image-description p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Add a glowing border effect on hover */
+.gallery-item:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+}
+
+/* Add a fade-in animation for the gallery items */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.gallery-item {
+  animation: fadeIn 0.5s ease-in-out;
+  animation-fill-mode: both;
+}
+
+/* Delay animations for each gallery item */
+.gallery-item:nth-child(1) { animation-delay: 0.2s; }
+.gallery-item:nth-child(2) { animation-delay: 0.4s; }
+.gallery-item:nth-child(3) { animation-delay: 0.6s; }
+.gallery-item:nth-child(4) { animation-delay: 0.8s; }
+.gallery-item:nth-child(5) { animation-delay: 0.10s; }
+.gallery-item:nth-child(6) { animation-delay: 0.12s; }
+  
+
+/* Character Detail Styling */
+.character-detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  margin-top: 80px; /* Adjust for navbar */
+  background: rgba(0, 0, 0, 0.0001); /* 99.99% transparent background */
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.character-image {
+  flex: 1;
+  margin-right: 40px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.character-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.character-image:hover img {
+  transform: scale(1.1);
+}
+
+.character-image:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+}
+
+.character-info {
+  flex: 2;
+  color: white;
+}
+
+.character-info h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #00bcd4;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.character-info p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.character-info h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #00bcd4;
+}
+
+.character-info ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.character-info ul li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.character-info ul li::before {
+  content: "•";
+  color: #00bcd4;
+  position: absolute;
+  left: 0;
+}
+
+.character-info blockquote {
+  font-size: 18px;
+  font-style: italic;
+  color: #00bcd4;
+  border-left: 4px solid #00bcd4;
+  padding-left: 20px;
+  margin: 20px 0;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

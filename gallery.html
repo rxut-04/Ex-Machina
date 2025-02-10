@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ex Machina Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="exmachina.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+
+  
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="terminal.html">Take a Deep Dive!</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Gallery Section -->
+  <div class="gallery">
+    <div class="gallery-item">
+      <a href="character1.html">
+        <img src="images/image1.webp" alt="Ava">
+        <div class="image-description">
+          <h3>Ava</h3>
+          <p>An advanced AI with human-like consciousness.</p>
+        </div>
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="character2.html">
+        <img src="images/image2.png" alt="Nathan">
+        <div class="image-description">
+          <h3>Nathan</h3>
+          <p>A reclusive genius who created Ava.</p>
+        </div>
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="character3.html">
+        <img src="images/image3.jpg" alt="Caleb">
+        <div class="image-description">
+          <h3>Caleb</h3>
+          <p>A programmer tasked with evaluating Ava's intelligence.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2023 Ex Machina Tribute. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
